@@ -2,11 +2,13 @@
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz"// all lowercase characters
-const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"// all uppercase characters
-const specialCharacters = "!@#$%^&*()_+<>:'[]{}"// all special characters
-const numbers = "0123456789"// all numbers
-var possibleCharacters = "";
+function randomNumber(min, max) {
+  return Math.floor(Math.random()*(max - min) + min)
+};
+function randomSelection(list) {
+  return list [randomNumber(0, list.length - 1)]
+}
+
 
 function generatePassword() {
   var input = window.prompt("How many characters in generated password?");
@@ -49,16 +51,17 @@ function generatePassword() {
     passwordOptions.push(upperCase)
   }
 
-  
+var generatedPassword = ""
 
+for (var i = 0; i < passwordLength; i++) { //Chooses a random number for password options as long as the length -1 (THE ARRAY STARTS AS 0 SO THE -1 IS NEEDED.)
+  var randomList = randomSelection(passwordOptions)
+  var randomCharacter = randomSelection(randomList)
+  console.log(randomCharacter)
+};
+
+  // MAKE SURE TO USE console.log(passwordOptions); EVERY NOW AND THEN TO CHECK THAT THE ARRAYS ARE BEING ADDED TO THE passwordOptions var WHEN THE PROMPTS ARE ANSWERED.
 }
 
-if (
-  uppercaseCharacters === false && lowercaseCharacters === false && numbers === false && specialCharacters === false
-) {
-  alert("Your password must be one of these character types.")
-  return null;
-}
 
 // Write password to the #password input
 function writePassword() {
