@@ -30,16 +30,16 @@ function generatePassword() {
 
 // USE window.confirm TO CREATE A WINDOW THAT NEEDS A YES OR NO.
   var lowerCaseConfirm = window.confirm("Include lowercase letters in generated password?")
-  var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"] // All lowercase characters
+  var lowerCase = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z") // All lowercase characters
 
   var numberConfirm = window.confirm("Include numeric characters in generated password?");
-  var numberCase = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; // All numbers characters
+  var numberCase = ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"); // All numbers characters
 
   var symbolsConfirm = window.confirm("Include symbols in generated password?");
-  var symbolsCase= ["!", "@", "#", "$", "%"]; // All symbols characters
+  var symbolsCase= ("!", "@", "#", "$", "%"); // All symbols characters
 
   var upperCaseConfirm = window.confirm("Include uppercase letters in generated password?");
-  var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; // All uppercase characters
+  var upperCase = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"); // All uppercase characters
 
   var passwordOptions = [];
   if (lowerCaseConfirm === true) { // If lowerCaseConfirm is true, then add lowerCase var into passwordOptions var
